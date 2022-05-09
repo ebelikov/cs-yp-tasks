@@ -4,6 +4,7 @@ var io_interface = readline.createInterface({ input: process.stdin });
 let line_number = 0;
 let input_numbers = [];
 
+
 function prepareNumberArray(line) {
   return line
     .trim()
