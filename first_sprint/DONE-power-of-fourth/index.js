@@ -2,18 +2,16 @@ var readline = require("readline");
 var io_interface = readline.createInterface({ input: process.stdin });
 
 let line_number = 0;
-let input_numbers = [];
+let checked_number = 0;
 
 
-function prepareNumberArray(line) {
-  return line
-    .trim()
-    .split(" ")
-    .map((num) => Number(num));
-}
-
-function main(a) {
-  return;
+function main(num) {
+  for(let i = 1; i <= num; i = i*4) {
+    if(i === num) {
+      return "True"
+    }
+  }
+return "False"
 }
 
 function output(output) {
@@ -22,18 +20,17 @@ function output(output) {
 
 io_interface.on("line", function (line) {
   if (line_number === 0) {
-    input_numbers = prepareNumberArray(line);
+    checked_number = Number(line);
   }
 
   line_number++;
 });
 
 io_interface.on("close", function () {
-  const result = main(...input_numbers).toString();
+  const result = main(checked_number);
   output(result);
 });
 
 module.exports = {
   main,
-  prepareNumberArray,
 };
