@@ -1,0 +1,10 @@
+node_modules/*
+
+# mac os
+**/.DS_Store
+src/.DS_Store
+
+# Code editors
+.idea
+.vscode
+.cache/

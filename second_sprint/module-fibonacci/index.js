@@ -5,34 +5,29 @@ let lineNumber = 0;
 let inputNumber = null;
 let powerNumber = null;
 
-function findFibNum(n) {
-  let a = BigInt(1);
-  let b = BigInt(1);
+function findFibNum(n, power) {
+  let a = 1;
+  let b = 1;
+  const delimiter = 10 ** power;
 
   if (n <= 1) {
     return 1;
   }
 
-  while (n > 2) {
+  while (n > 1) {
     let temp = b;
-    b = a + b;
+    b = (a + b) % delimiter;
     a = temp;
 
     n--;
   }
 
-  return (a + b).toString();
-}
-
-function getRemainder(num, power) {
-  return Number(num) % 10 ** power;
+  return b;
 }
 
 function main() {
-  const fibNum = findFibNum(inputNumber);
-  const lastFibNum = fibNum.slice(fibNum.length - 10);
-  const remainder = getRemainder(lastFibNum, powerNumber);
-  output(remainder.toString());
+  const fibNum = findFibNum(inputNumber, powerNumber);
+  output(fibNum.toString());
 }
 
 function output(output) {

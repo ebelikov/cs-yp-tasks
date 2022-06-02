@@ -1,19 +1,29 @@
-var readline = require("readline");
-var io_interface = readline.createInterface({ input: process.stdin });
+/**
+ * -- ПРИНЦИП РАБОТЫ -
+ * 
+ * -- ДОКАЗАТЕЛЬСТВО КОРРЕКТНОСТИ --
+ * 
+ * -- ВРЕМЕННАЯ СЛОЖНОСТЬ --
+ * 
+ * -- ПРОСТРАНСТВЕННАЯ СЛОЖНОСТЬ --
+ * 
+ */
 
+const readline = require("readline");
+const io_interface = readline.createInterface({ input: process.stdin });
+const ERROR = "error";
 let lineNumber = 0;
 
-function main() {
+const main = () => {
   //code here
-}
+};
 
-function output(output) {
-  process.stdout.write(output);
+const output = (value) => {
+  process.stdout.write(value);
 }
 
 io_interface.on("line", function (line) {
   if (lineNumber === 0) {
-    
   }
 
   lineNumber++;
@@ -23,7 +33,3 @@ io_interface.on("close", function () {
   main();
 });
 
-module.exports = {
-  main,
-  prepareNumberArray,
-};
