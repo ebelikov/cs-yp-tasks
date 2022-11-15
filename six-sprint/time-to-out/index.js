@@ -13,7 +13,6 @@ const readline = require("readline");
 const io_interface = readline.createInterface({ input: process.stdin });
 let lineNumber = 0;
 let edgesLength = null;
-let root = null;
 let verticesLength = null;
 
 const edges = [];
@@ -22,7 +21,7 @@ const output = (value) => {
 	process.stdout.write(value);
 };
 
-const main = () => {
+const createVerticesList = (edges) => {
 	const list = Array(verticesLength + 1);
 	list[0] = -1;
 
@@ -32,12 +31,6 @@ const main = () => {
 		} else {
 			list[from] = [to];
 		}
-
-		if (Array.isArray(list[to])) {
-			list[to].push(from);
-		} else {
-			list[to] = [from];
-		}
 	}
 
 	for (let item of list) {
@@ -46,39 +39,65 @@ const main = () => {
 		}
 	}
 
-	const colors = Array(verticesLength + 1).fill("white");
+	return list
+}
+
+const createBaseLists = (size) => {
+	const colors = Array(size).fill("white");
+	const entry = Array((size));
+	const leave = Array((size));
+
 	colors[0] = -1;
+	entry[0] = -1;
+	leave[0] = -1;
 
-	const res = [];
+	return { colors, entry, leave }
+}
 
-	const DFS = (index) => {
-		const stack = [];
-		stack.push(index);
+const DFS = ({
+	colors,
+	entry,
+	leave,
+	vertices,
+	startIdx
+}) => {
+	const stack = [];
+	let time = 0;
+	stack.push(startIdx);
 
-		while (stack.length) {
-			const poped = stack.pop();
+	while (stack.length) {
+		const curIdx = stack.pop();
 
-			if (colors[poped] === "white") {
-				colors[poped] = "gray";
-				stack.push(poped);
-				res.push(poped);
+		if (colors[curIdx] === 'white') {
+			entry[curIdx] = time++;
+			colors[curIdx] = 'gray';
+			stack.push(curIdx);
 
-				if (typeof list[poped] === "object" && list[poped] !== null) {
-					for (let v of list[poped]) {
-						if (colors[v] === "white") {
-							stack.push(v);
-						}
-					}
+			if (Array.isArray(vertices[curIdx])) {
+				for (const idx of vertices[curIdx]) {
+					if (colors[idx] === 'white') stack.push(idx)
 				}
-			} else if (colors[poped] === "gray") {
-				colors[poped] = "black";
 			}
+		} else if (colors[curIdx] === 'gray') {
+			leave[curIdx] = time++;
+			colors[curIdx] = 'black';
 		}
-	};
+	}
+}
 
-	DFS(root);
+const main = () => {
+	const vertices = createVerticesList(edges);
+	const { colors, entry, leave } = createBaseLists(verticesLength + 1);
 
-	output(res.join(" "));
+	DFS({ vertices, colors, entry, leave, startIdx: 1 })
+
+	let res = ''
+
+	for (let i = 1; i < entry.length; i++) {
+		res += `${entry[i]} ${leave[i]}\n`
+	}
+
+	output(res);
 };
 
 const prepareInput = (line) => {
@@ -98,8 +117,6 @@ io_interface.on("line", function (line) {
 		const [from, to] = prepareInput(line);
 
 		edges.push({ from, to });
-	} else if (lineNumber === edgesLength + 1) {
-		root = Number(line);
 	}
 
 	lineNumber++;

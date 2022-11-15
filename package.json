@@ -1,25 +1,28 @@
 {
-  "name": "tasks",
-  "version": "1.0.0",
-  "description": "",
-  "main": "jest.config.js",
-  "directories": {
-    "example": "example"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ebelikov/cs-yp-tasks.git"
-  },
-  "author": "ebelikov",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ebelikov/cs-yp-tasks/issues"
-  },
-  "homepage": "https://github.com/ebelikov/cs-yp-tasks#readme",
-  "devDependencies": {
-    "eslint": "^8.22.0"
-  }
+	"name": "tasks",
+	"version": "1.0.0",
+	"description": "",
+	"main": "jest.config.js",
+	"directories": {
+		"example": "example"
+	},
+	"engines": {
+		"node": "=14.15.5"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ebelikov/cs-yp-tasks.git"
+	},
+	"author": "ebelikov",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/ebelikov/cs-yp-tasks/issues"
+	},
+	"homepage": "https://github.com/ebelikov/cs-yp-tasks#readme",
+	"devDependencies": {
+		"eslint": "^8.22.0"
+	}
 }
