@@ -43,11 +43,11 @@
  * 28.08 - дедлайн =)
  */
 
-const readline = require("readline");
+const readline = require('readline');
 const io_interface = readline.createInterface({ input: process.stdin });
 
 const TABLE_SIZE = 100057;
-const NONE = "None";
+const NONE = 'None';
 
 let lineNumber = 0;
 let operationsLength = null;
@@ -200,14 +200,14 @@ const runOperations = (operations) => {
 
 const main = () => {
   const logs = runOperations(operations);
-  output(logs.join("\n"));
+  output(logs.join('\n'));
 };
 
-io_interface.on("line", function (line) {
+io_interface.on('line', function (line) {
   if (lineNumber === 0) {
     operationsLength = Number(line);
   } else if (lineNumber <= operationsLength) {
-    const [command, key, value] = line.trim().split(" ");
+    const [command, key, value] = line.trim().split(' ');
 
     const operation = {
       command,
@@ -224,6 +224,6 @@ io_interface.on("line", function (line) {
   lineNumber++;
 });
 
-io_interface.on("close", function () {
+io_interface.on('close', function () {
   main();
 });

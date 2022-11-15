@@ -1,9 +1,8 @@
-var readline = require("readline");
+var readline = require('readline');
 var io_interface = readline.createInterface({ input: process.stdin });
 
 let lineNumber = 0;
 let inputNumber = null;
-
 
 // // recursive method
 // function findFibNum(n) {
@@ -36,19 +35,19 @@ function findFibNum(n) {
 // function findFibNum(n) {
 // 	let a = BigInt(1);
 // 	let b = BigInt(1);
-  
+
 // 	if (n <= 1) {
 // 	  return res;
 // 	}
-  
+
 // 	while (n > 2) {
 // 	  let temp = b;
 // 	  b = a + b;
 // 	  a = temp;
-  
+
 // 	  n--;
 // 	}
-  
+
 // 	return (a + b).toString();
 //   }
 
@@ -61,7 +60,7 @@ function output(output) {
   process.stdout.write(output);
 }
 
-io_interface.on("line", function (line) {
+io_interface.on('line', function (line) {
   if (lineNumber === 0) {
     inputNumber = Number(line);
   }
@@ -69,6 +68,6 @@ io_interface.on("line", function (line) {
   lineNumber++;
 });
 
-io_interface.on("close", function () {
+io_interface.on('close', function () {
   main();
 });

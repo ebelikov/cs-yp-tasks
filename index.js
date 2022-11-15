@@ -1,41 +1,39 @@
 const mainDiv = window.document.getElementById('main');
 
-console.log(mainDiv)
+console.log(mainDiv);
 
 class TreeNode {
-	constructor(node, deep) {
-		this.node = node;
-		this.deep = deep;
-	}
+  constructor(node, deep) {
+    this.node = node;
+    this.deep = deep;
+  }
 }
 
 const maxDeep = (root) => {
-	if (!root) {
-		return 0;
-	}
+  if (!root) {
+    return 0;
+  }
 
-	let maxDeep = 1;
+  let maxDeep = 1;
 
+  const queue = [];
+  queue.push(new TreeNode(root, 1));
 
-	const queue = [];
-	queue.push(new TreeNode(root, 1));
+  while (queue.length) {
+    const { node, deep } = queue.shift();
+    console.log(deep);
+    if (!node.children.length) {
+      maxDeep = Math.max(maxDeep, deep);
+      continue;
+    }
 
-	while (queue.length) {
-		const { node, deep } = queue.shift();
-		console.log(deep);
-		if (!node.children.length) {
-			maxDeep = Math.max(maxDeep, deep);
-			continue;
-		}
+    for (let i = 0; i < node.children.length; i++) {
+      queue.push(new TreeNode(node.children[i], deep + 1));
+    }
+  }
 
-
-		for (let i = 0; i < node.children.length; i++) {
-			queue.push(new TreeNode(node.children[i], deep + 1))
-		}
-	}
-
-	return maxDeep;
-}
+  return maxDeep;
+};
 
 const deep = maxDeep(mainDiv);
 const outputDiv = window.document.getElementById('output');

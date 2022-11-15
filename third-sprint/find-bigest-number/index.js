@@ -9,9 +9,9 @@
  *
  */
 
-const readline = require("readline");
+const readline = require('readline');
 const io_interface = readline.createInterface({ input: process.stdin });
-const ERROR = "error";
+const ERROR = 'error';
 let lineNumber = 0;
 let inputNumbersLength = null;
 let inputNumbers = null;
@@ -34,7 +34,7 @@ const findBigestNumber = (arr) => {
     return 0;
   });
 
-  return arr.join("");
+  return arr.join('');
 };
 
 const main = () => {
@@ -42,16 +42,16 @@ const main = () => {
   output(res);
 };
 
-io_interface.on("line", function (line) {
+io_interface.on('line', function (line) {
   if (lineNumber === 0) {
     inputNumbersLength = Number(line);
   } else if (lineNumber === 1) {
-    inputNumbers = line.trim().split(" ");
+    inputNumbers = line.trim().split(' ');
   }
 
   lineNumber++;
 });
 
-io_interface.on("close", function () {
+io_interface.on('close', function () {
   main();
 });

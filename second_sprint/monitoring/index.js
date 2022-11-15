@@ -1,4 +1,4 @@
-var readline = require("readline");
+var readline = require('readline');
 var io_interface = readline.createInterface({ input: process.stdin });
 
 function output(value) {
@@ -31,7 +31,7 @@ function addMatrixLine(line) {
   matrix.push(
     line
       .trim()
-      .split(" ")
+      .split(' ')
       .map((n) => Number(n))
   );
 }
@@ -39,12 +39,12 @@ function addMatrixLine(line) {
 function main() {
   let revertedMatrix = revertMatrix(matrixLines, matrixColumns, matrix);
 
-  revertedMatrix = revertedMatrix.map((line) => line.join(" ")).join("\n");
+  revertedMatrix = revertedMatrix.map((line) => line.join(' ')).join('\n');
 
   output(revertedMatrix);
 }
 
-io_interface.on("line", function (line) {
+io_interface.on('line', function (line) {
   if (line_number === 0) {
     matrixLines = Number(line);
   } else if (line_number === 1) {
@@ -56,6 +56,6 @@ io_interface.on("line", function (line) {
   line_number++;
 });
 
-io_interface.on("close", function () {
+io_interface.on('close', function () {
   main();
 });

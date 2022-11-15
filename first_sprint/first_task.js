@@ -1,5 +1,5 @@
 // 68540200
-var readline = require("readline");
+var readline = require('readline');
 var io_interface = readline.createInterface({ input: process.stdin });
 
 let line_number = 0;
@@ -53,9 +53,9 @@ function main(list, length) {
     const current_distance = Math.min(
       distance_list_by_direct[i],
       distance_list_by_reverse[length - i - 1]
-    )
+    );
 
-    result.push(current_distance)
+    result.push(current_distance);
   }
 
   return result.join(' ');
@@ -65,14 +65,14 @@ const prepare_number_array = (str) => {
   return str
     .trim()
     .split(' ')
-    .map(num => Number(num))
-}
+    .map((num) => Number(num));
+};
 
 function output(output) {
   process.stdout.write(output);
 }
 
-io_interface.on("line", function (line) {
+io_interface.on('line', function (line) {
   if (line_number === 0) {
     length = Number(line);
   } else if (line_number === 1) {
@@ -82,7 +82,7 @@ io_interface.on("line", function (line) {
   line_number++;
 });
 
-io_interface.on("close", function () {
+io_interface.on('close', function () {
   const result = main(house_map_list, length);
   output(result);
 });

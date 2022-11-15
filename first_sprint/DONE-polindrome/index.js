@@ -1,13 +1,13 @@
-var readline = require("readline");
+var readline = require('readline');
 var io_interface = readline.createInterface({ input: process.stdin });
 
 let line_number = 0;
-let word = "";
+let word = '';
 
 function prepareString(line) {
   return line
     .trim()
-    .replace(/[^\w|^\d]/g, "")
+    .replace(/[^\w|^\d]/g, '')
     .toLowerCase();
 }
 
@@ -18,18 +18,18 @@ function main(word) {
     let j = word.length - i - 1;
 
     if (word[i] !== word[j]) {
-      return "False";
+      return 'False';
     }
   }
 
-  return "True";
+  return 'True';
 }
 
 function output(output) {
   process.stdout.write(output);
 }
 
-io_interface.on("line", function (line) {
+io_interface.on('line', function (line) {
   if (line_number === 0) {
     word = prepareString(line);
   }
@@ -37,7 +37,7 @@ io_interface.on("line", function (line) {
   line_number++;
 });
 
-io_interface.on("close", function () {
+io_interface.on('close', function () {
   output(main(word));
 });
 

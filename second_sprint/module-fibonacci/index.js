@@ -8,7 +8,7 @@ let powerNumber = null;
 function findFibNum(n, power) {
   let a = 1;
   let b = 1;
-  const delimiter = 10 ** power;
+  const delimiter = (10 ** power);
 
   if (n <= 1) {
     return 1;

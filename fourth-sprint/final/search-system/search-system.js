@@ -43,7 +43,7 @@
  * 28.08 - дедлайн =)
  */
 
-const readline = require("readline");
+const readline = require('readline');
 const io_interface = readline.createInterface({ input: process.stdin });
 
 let lineNumber = 0;
@@ -56,7 +56,7 @@ const requests = [];
 const filesByWord = new Map();
 
 const prepareOutput = (matches) => {
-  return matches.map(({ index }) => index).join(" ") + "\n";
+  return matches.map(({ index }) => index).join(' ') + '\n';
 };
 
 const output = (value) => {
@@ -107,7 +107,7 @@ const main = () => {
 };
 
 const prepareLine = (line) => {
-  return line.trim().split(" ");
+  return line.trim().split(' ');
 };
 
 const handleFileLine = (line, lineNumber) => {
@@ -145,7 +145,7 @@ const handleRequestLine = (line) => {
   requests.push(request);
 };
 
-io_interface.on("line", function (line) {
+io_interface.on('line', function (line) {
   if (lineNumber === 0) {
     filesLength = Number(line);
   } else if (lineNumber <= filesLength) {
@@ -157,6 +157,6 @@ io_interface.on("line", function (line) {
   lineNumber++;
 });
 
-io_interface.on("close", function () {
+io_interface.on('close', function () {
   main();
 });

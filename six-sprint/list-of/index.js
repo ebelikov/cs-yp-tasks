@@ -9,7 +9,7 @@
  *
  */
 
-const readline = require("readline");
+const readline = require('readline');
 const io_interface = readline.createInterface({ input: process.stdin });
 let lineNumber = 0;
 let edgesLength = null;
@@ -32,7 +32,7 @@ class ListItem {
   }
 
   getOutputView() {
-    return this.len.toString() + " " + this.vertices.join(" ");
+    return this.len.toString() + ' ' + this.vertices.join(' ');
   }
 }
 
@@ -58,20 +58,20 @@ const main = () => {
       continue;
     }
 
-    resOutput.push("0");
+    resOutput.push('0');
   }
 
-  output(resOutput.join("\n"));
+  output(resOutput.join('\n'));
 };
 
 const prepareInput = (line) => {
   return line
     .trim()
-    .split(" ")
+    .split(' ')
     .map((n) => Number(n));
 };
 
-io_interface.on("line", function (line) {
+io_interface.on('line', function (line) {
   if (lineNumber === 0) {
     const [v, e] = prepareInput(line);
 
@@ -86,6 +86,6 @@ io_interface.on("line", function (line) {
   lineNumber++;
 });
 
-io_interface.on("close", function () {
+io_interface.on('close', function () {
   main();
 });

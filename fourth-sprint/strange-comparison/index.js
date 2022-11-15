@@ -9,11 +9,11 @@
  *
  */
 
-const readline = require("readline");
+const readline = require('readline');
 const io_interface = readline.createInterface({ input: process.stdin });
 
-const YES = "YES";
-const NO = "NO";
+const YES = 'YES';
+const NO = 'NO';
 
 let lineNumber = 0;
 
@@ -83,7 +83,7 @@ const main = () => {
   output(res);
 };
 
-io_interface.on("line", function (line) {
+io_interface.on('line', function (line) {
   if (lineNumber === 0) {
     n = line.trim();
   } else if (lineNumber === 1) {
@@ -93,6 +93,6 @@ io_interface.on("line", function (line) {
   lineNumber++;
 });
 
-io_interface.on("close", function () {
+io_interface.on('close', function () {
   main();
 });

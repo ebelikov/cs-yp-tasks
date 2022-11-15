@@ -1,4 +1,4 @@
-var readline = require("readline");
+var readline = require('readline');
 var io_interface = readline.createInterface({ input: process.stdin });
 
 let line_number = 0;
@@ -10,7 +10,7 @@ function main(input_numbers, number) {
   const joinedNumber = Number(input_numbers.split(' ').join(''));
 
   const result = joinedNumber + number;
-  
+
   return result.toString().split('').join(' ');
 }
 
@@ -18,7 +18,7 @@ function output(output) {
   process.stdout.write(output);
 }
 
-io_interface.on("line", function (line) {
+io_interface.on('line', function (line) {
   if (line_number === 0) {
     length = Number(line);
   } else if (line_number === 1) {
@@ -30,7 +30,7 @@ io_interface.on("line", function (line) {
   line_number++;
 });
 
-io_interface.on("close", function () {
+io_interface.on('close', function () {
   const result = main(input_numbers, number);
   output(result);
 });

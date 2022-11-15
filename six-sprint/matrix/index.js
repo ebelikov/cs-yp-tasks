@@ -9,7 +9,7 @@
  *
  */
 
-const readline = require("readline");
+const readline = require('readline');
 const io_interface = readline.createInterface({ input: process.stdin });
 let lineNumber = 0;
 let edgesLength = null;
@@ -33,20 +33,20 @@ const main = () => {
   const res = [];
 
   for (const arr of matrix) {
-    res.push(arr.join(" "));
+    res.push(arr.join(' '));
   }
 
-  output(res.join("\n"));
+  output(res.join('\n'));
 };
 
 const prepareInput = (line) => {
   return line
     .trim()
-    .split(" ")
+    .split(' ')
     .map((n) => Number(n));
 };
 
-io_interface.on("line", function (line) {
+io_interface.on('line', function (line) {
   if (lineNumber === 0) {
     const [v, e] = prepareInput(line);
 
@@ -61,6 +61,6 @@ io_interface.on("line", function (line) {
   lineNumber++;
 });
 
-io_interface.on("close", function () {
+io_interface.on('close', function () {
   main();
 });

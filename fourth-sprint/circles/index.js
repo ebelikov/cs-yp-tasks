@@ -9,14 +9,14 @@
  *
  */
 
-const readline = require("readline");
+const readline = require('readline');
 const io_interface = readline.createInterface({ input: process.stdin });
 let n = null;
 let arr = [];
 let lineNumber = 0;
 
 const output = (value) => {
-  process.stdout.write(value + "\n");
+  process.stdout.write(value + '\n');
 };
 
 const main = (arr) => {
@@ -35,7 +35,7 @@ const main = (arr) => {
   }
 };
 
-io_interface.on("line", function (line) {
+io_interface.on('line', function (line) {
   if (lineNumber === 0) {
     n = Number(line);
   } else if (lineNumber <= n) {
@@ -45,6 +45,6 @@ io_interface.on("line", function (line) {
   lineNumber++;
 });
 
-io_interface.on("close", function () {
+io_interface.on('close', function () {
   main(arr);
 });

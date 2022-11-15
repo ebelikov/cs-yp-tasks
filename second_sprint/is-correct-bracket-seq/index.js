@@ -1,9 +1,9 @@
-var readline = require("readline");
+var readline = require('readline');
 var io_interface = readline.createInterface({ input: process.stdin });
 
 const ANSWERS = {
-  IS_VALID: "True",
-  IS_NOT_VALID: "False",
+  IS_VALID: 'True',
+  IS_NOT_VALID: 'False',
 };
 
 let line_number = 0;
@@ -14,17 +14,17 @@ function output(output) {
 }
 
 function prepareBracketsArray(backetsLine) {
-  inputBracketsArray = backetsLine.split("");
+  inputBracketsArray = backetsLine.split('');
 }
 
 function isBracketPairValid(pair) {
-  const VALID_PAIRS = ["[]", "{}", "()"];
+  const VALID_PAIRS = ['[]', '{}', '()'];
 
   return VALID_PAIRS.includes(pair);
 }
 
 function checkBracketsSeq(brackets) {
-  const OPENED_BRACKETS = ["[", "{", "("];
+  const OPENED_BRACKETS = ['[', '{', '('];
 
   const stack = [];
 
@@ -54,7 +54,7 @@ function main() {
   output(result);
 }
 
-io_interface.on("line", function (line) {
+io_interface.on('line', function (line) {
   if (line_number === 0) {
     prepareBracketsArray(line);
   }
@@ -62,6 +62,6 @@ io_interface.on("line", function (line) {
   line_number++;
 });
 
-io_interface.on("close", function () {
+io_interface.on('close', function () {
   main();
 });

@@ -9,7 +9,7 @@
  *
  */
 
-const readline = require("readline");
+const readline = require('readline');
 const io_interface = readline.createInterface({ input: process.stdin });
 
 let lineNumber = 0;
@@ -55,14 +55,14 @@ const calculate = (ids, q) => {
 
 const main = () => {
   const res = calculate(ids, quantity);
-  output(res.join(" "));
+  output(res.join(' '));
 };
 
-io_interface.on("line", function (line) {
+io_interface.on('line', function (line) {
   if (lineNumber === 1) {
     ids = line
       .trim()
-      .split(" ")
+      .split(' ')
       .map((n) => Number(n));
   } else if (lineNumber === 2) {
     quantity = Number(line);
@@ -71,6 +71,6 @@ io_interface.on("line", function (line) {
   lineNumber++;
 });
 
-io_interface.on("close", function () {
+io_interface.on('close', function () {
   main();
 });

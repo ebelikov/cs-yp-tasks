@@ -19,7 +19,7 @@
  * O(n) массив для кучи
  */
 
-const readline = require("readline");
+const readline = require('readline');
 const io_interface = readline.createInterface({ input: process.stdin });
 
 const participants = [];
@@ -143,14 +143,14 @@ const sortParticipants = (arr) => {
 const main = () => {
   const res = sortParticipants(participants)
     .map(({ login }) => login)
-    .join("\n");
+    .join('\n');
 
   output(res);
 };
 
 class Participant {
   constructor(str) {
-    const [login, points, penalty] = str.trim().split(" ");
+    const [login, points, penalty] = str.trim().split(' ');
 
     this.login = login;
     this.points = Number(points);
@@ -158,7 +158,7 @@ class Participant {
   }
 }
 
-io_interface.on("line", function (line) {
+io_interface.on('line', function (line) {
   if (lineNumber === 0) {
     participantsLength = Number(line);
   } else if (lineNumber <= participantsLength) {
@@ -168,6 +168,6 @@ io_interface.on("line", function (line) {
   lineNumber++;
 });
 
-io_interface.on("close", function () {
+io_interface.on('close', function () {
   main();
 });

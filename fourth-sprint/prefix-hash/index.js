@@ -9,9 +9,9 @@
  *
  */
 
-const readline = require("readline");
+const readline = require('readline');
 const io_interface = readline.createInterface({ input: process.stdin });
-const ERROR = "error";
+const ERROR = 'error';
 let lineNumber = 0;
 
 let k = null;
@@ -63,13 +63,13 @@ const main = () => {
 
   for (let i = 0; i < operations.length; i++) {
     const diff = calculateDiff(...operations[i]);
-    output(diff.toString() + "\n");
+    output(diff.toString() + '\n');
   }
 };
 
 let operationsLength = null;
 
-io_interface.on("line", function (line) {
+io_interface.on('line', function (line) {
   if (lineNumber === 0) {
     k = Number(line);
   } else if (lineNumber === 1) {
@@ -82,7 +82,7 @@ io_interface.on("line", function (line) {
     operations.push(
       line
         .trim()
-        .split(" ")
+        .split(' ')
         .map((n) => Number(n))
     );
   }
@@ -90,6 +90,6 @@ io_interface.on("line", function (line) {
   lineNumber++;
 });
 
-io_interface.on("close", function () {
+io_interface.on('close', function () {
   main();
 });

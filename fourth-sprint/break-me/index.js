@@ -22,8 +22,8 @@ const getHash = (str, a = 1000, m = 123987123) => {
 
 function makeid(length) {
   length = 19;
-  var result = "";
-  var characters = "abcdefghijklmnopqrstuvwxyz";
+  var result = '';
+  var characters = 'abcdefghijklmnopqrstuvwxyz';
   var charactersLength = characters.length;
   for (var i = 0; i < length; i++) {
     result += characters.charAt(Math.floor(Math.random() * charactersLength));

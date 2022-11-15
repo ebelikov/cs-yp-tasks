@@ -9,9 +9,9 @@
  *
  */
 
-const readline = require("readline");
+const readline = require('readline');
 const io_interface = readline.createInterface({ input: process.stdin });
-const ERROR = "error";
+const ERROR = 'error';
 let lineNumber = 0;
 let homePricesLength = null;
 let budget = null;
@@ -46,11 +46,11 @@ const main = () => {
   output(res.toString());
 };
 
-io_interface.on("line", function (line) {
+io_interface.on('line', function (line) {
   if (lineNumber === 0) {
     const [n, k] = line
       .trim()
-      .split(" ")
+      .split(' ')
       .map((n) => Number(n));
 
     homePricesLength = n;
@@ -58,13 +58,13 @@ io_interface.on("line", function (line) {
   } else if (lineNumber === 1) {
     homePrices = line
       .trim()
-      .split(" ")
+      .split(' ')
       .map((n) => Number(n));
   }
 
   lineNumber++;
 });
 
-io_interface.on("close", function () {
+io_interface.on('close', function () {
   main();
 });

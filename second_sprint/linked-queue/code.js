@@ -1,8 +1,8 @@
-var readline = require("readline");
+var readline = require('readline');
 var io_interface = readline.createInterface({ input: process.stdin });
 
 function output(output) {
-  process.stdout.write(output + "\n");
+  process.stdout.write(output + '\n');
 }
 
 class Node {
@@ -35,7 +35,7 @@ class Queue {
 
   get() {
     if (this.currentSize === 0) {
-      output("error");
+      output('error');
       return;
     }
 
@@ -66,7 +66,7 @@ let operationLength = 0;
 const operations = [];
 
 function addOperationLine(line) {
-  operations.push(line.trim().split(" "));
+  operations.push(line.trim().split(' '));
 }
 
 function runOperations(n, operations) {
@@ -82,7 +82,7 @@ function main() {
   runOperations(operationLength, operations);
 }
 
-io_interface.on("line", function (line) {
+io_interface.on('line', function (line) {
   if (lineNumber === 0) {
     operationLength = Number(line);
   } else if (line) {
@@ -92,6 +92,6 @@ io_interface.on("line", function (line) {
   lineNumber++;
 });
 
-io_interface.on("close", function () {
+io_interface.on('close', function () {
   main();
 });

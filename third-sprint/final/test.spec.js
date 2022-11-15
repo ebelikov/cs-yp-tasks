@@ -1,29 +1,29 @@
-const { quickSort } = require("./quick-sort.js");
+const { quickSort } = require('./quick-sort.js');
 
-test("1", () => {
+test('1', () => {
   const arr = [
     {
-      name: "alla",
+      name: 'alla',
       solvedTasks: 0,
       fine: 0,
     },
     {
-      name: "gena",
+      name: 'gena',
       solvedTasks: 0,
       fine: 0,
     },
     {
-      name: "gosha",
+      name: 'gosha',
       solvedTasks: 0,
       fine: 0,
     },
     {
-      name: "rita",
+      name: 'rita',
       solvedTasks: 0,
       fine: 0,
     },
     {
-      name: "timofey",
+      name: 'timofey',
       solvedTasks: 0,
       fine: 0,
     },
@@ -31,27 +31,27 @@ test("1", () => {
   quickSort(arr);
   expect(arr).toStrictEqual([
     {
-      name: "alla",
+      name: 'alla',
       solvedTasks: 0,
       fine: 0,
     },
     {
-      name: "gena",
+      name: 'gena',
       solvedTasks: 0,
       fine: 0,
     },
     {
-      name: "gosha",
+      name: 'gosha',
       solvedTasks: 0,
       fine: 0,
     },
     {
-      name: "rita",
+      name: 'rita',
       solvedTasks: 0,
       fine: 0,
     },
     {
-      name: "timofey",
+      name: 'timofey',
       solvedTasks: 0,
       fine: 0,
     },

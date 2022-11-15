@@ -9,9 +9,9 @@
  *
  */
 
-const readline = require("readline");
+const readline = require('readline');
 const io_interface = readline.createInterface({ input: process.stdin });
-const ERROR = "error";
+const ERROR = 'error';
 let lineNumber = 0;
 let triangleSides = null;
 
@@ -49,17 +49,17 @@ const main = () => {
   output(res.toString());
 };
 
-io_interface.on("line", function (line) {
+io_interface.on('line', function (line) {
   if (lineNumber === 1) {
     triangleSides = line
       .trim()
-      .split(" ")
+      .split(' ')
       .map((n) => Number(n));
   }
 
   lineNumber++;
 });
 
-io_interface.on("close", function () {
+io_interface.on('close', function () {
   main();
 });

@@ -50,7 +50,7 @@ function brokenSearch(arr, k) {
       return mid;
     }
 
-    // Отсортирована левая часть или правая
+    // Отсортирована левая часть или правая
     if (lValue <= midValue) {
       if (lValue <= k && k < midValue) {
         return binarySearch(arr, k, left, mid - 1);

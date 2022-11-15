@@ -27,10 +27,10 @@
  *
  */
 
-const readline = require("readline");
+const readline = require('readline');
 const io_interface = readline.createInterface({ input: process.stdin });
 
-const ERROR = "error";
+const ERROR = 'error';
 
 let lineNumber = 0;
 let expressionItems = null;
@@ -63,20 +63,20 @@ class Stack {
 }
 
 const operatorMethods = {
-  "*"(a, b) {
+  '*'(a, b) {
     return a * b;
   },
   /**
    * Так нужно математическое целочисленное деление,
    * необходимо округлять значение деления до меньшего с помощью Math.floor
    */
-  "/"(a, b) {
+  '/'(a, b) {
     return Math.floor(a / b);
   },
-  "-"(a, b) {
+  '-'(a, b) {
     return a - b;
   },
-  "+"(a, b) {
+  '+'(a, b) {
     return a + b;
   },
 };
@@ -110,14 +110,14 @@ const main = () => {
   output(result.toString());
 };
 
-io_interface.on("line", function (line) {
+io_interface.on('line', function (line) {
   if (lineNumber === 0) {
-    expressionItems = line.trim().split(" ");
+    expressionItems = line.trim().split(' ');
   }
 
   lineNumber++;
 });
 
-io_interface.on("close", function () {
+io_interface.on('close', function () {
   main();
 });

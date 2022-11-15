@@ -1,4 +1,4 @@
-var readline = require("readline");
+var readline = require('readline');
 var io_interface = readline.createInterface({ input: process.stdin });
 
 let index_line = 0;
@@ -6,7 +6,7 @@ let length = 0;
 let weather_numbers = [];
 
 function prepareNumberArray(line) {
-  return line.split(" ").map((num) => Number(num));
+  return line.split(' ').map((num) => Number(num));
 }
 
 function main(weather_numbers) {
@@ -25,7 +25,7 @@ function main(weather_numbers) {
 
     if (isMorePrev && isMoreNext) {
       chaotic_days++;
-	  i++
+      i++;
     }
   }
 
@@ -36,7 +36,7 @@ function output(output) {
   process.stdout.write(output);
 }
 
-io_interface.on("line", function (line) {
+io_interface.on('line', function (line) {
   if (index_line === 0) {
     length = Number(line);
   } else if (index_line === 1) {
@@ -46,7 +46,7 @@ io_interface.on("line", function (line) {
   index_line++;
 });
 
-io_interface.on("close", function () {
+io_interface.on('close', function () {
   const result = main(weather_numbers);
   output(result);
 });

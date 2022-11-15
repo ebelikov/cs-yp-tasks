@@ -1,8 +1,8 @@
-const participants = ["sasha", "zhenya"];
+const participants = ['sasha', 'zhenya'];
 
 const chooseRandom = (arr) => {
   if (!arr.length) {
-    return "nobody";
+    return 'nobody';
   }
 
   const index = Math.floor(Math.random() * arr.length);

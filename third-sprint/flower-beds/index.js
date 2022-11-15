@@ -9,15 +9,15 @@
  *
  */
 
-const readline = require("readline");
+const readline = require('readline');
 const io_interface = readline.createInterface({ input: process.stdin });
-const ERROR = "error";
+const ERROR = 'error';
 let lineNumber = 0;
 let masters = null;
 let mastersRanges = [];
 
 const output = (value) => {
-  process.stdout.write(value.join(" ") + "\n");
+  process.stdout.write(value.join(' ') + '\n');
 };
 
 const comparator = (a, b) => {
@@ -61,13 +61,13 @@ const main = () => {
   });
 };
 
-io_interface.on("line", function (line) {
+io_interface.on('line', function (line) {
   if (lineNumber === 0) {
     masters = Number(line);
   } else if (lineNumber) {
     const range = line
       .trim()
-      .split(" ")
+      .split(' ')
       .map((n) => Number(n));
     mastersRanges.push(range);
   }
@@ -75,6 +75,6 @@ io_interface.on("line", function (line) {
   lineNumber++;
 });
 
-io_interface.on("close", function () {
+io_interface.on('close', function () {
   main();
 });

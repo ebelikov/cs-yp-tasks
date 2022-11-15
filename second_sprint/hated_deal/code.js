@@ -1,34 +1,33 @@
-// class Node {  
-//   constructor(value = null, next = null) {  
-//     this.value = value;  
-//     this.next = next;  
-//   }  
+// class Node {
+//   constructor(value = null, next = null) {
+//     this.value = value;
+//     this.next = next;
+//   }
 // }
 
 function solution(node, idx) {
-	let prevNode = null
-	let currentNode = node;
-	
-	if(idx === 0) {
-		return node.next
-	}
+  let prevNode = null;
+  let currentNode = node;
 
-	while(idx) {
-		prevNode = currentNode;
-		currentNode = currentNode.next;
-		idx--;
-	}
-	
-	if(prevNode) {
-		prevNode.next = currentNode.next || null;
-	}
+  if (idx === 0) {
+    return node.next;
+  }
 
-	if (currentNode.next) {
-		currentNode.next = null;
-	}
+  while (idx) {
+    prevNode = currentNode;
+    currentNode = currentNode.next;
+    idx--;
+  }
 
-	return node;
+  if (prevNode) {
+    prevNode.next = currentNode.next || null;
+  }
 
+  if (currentNode.next) {
+    currentNode.next = null;
+  }
+
+  return node;
 }
 
 // function test() {

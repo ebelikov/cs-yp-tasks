@@ -23,7 +23,7 @@ function printRange(root, left, right) {
   }
 
   if (left <= root.value && root.value <= right) {
-    console.log(root.value + " ");
+    console.log(root.value + ' ');
   }
 
   if (root.value <= right) {

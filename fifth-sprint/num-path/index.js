@@ -7,7 +7,7 @@
 //   }
 // }
 
-function solution(root, prev = "") {
+function solution(root, prev = '') {
   const next = prev + root.value;
 
   if (root.left && root.right) {

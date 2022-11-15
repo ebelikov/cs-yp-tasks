@@ -1,18 +1,17 @@
-var readline = require("readline");
+var readline = require('readline');
 var io_interface = readline.createInterface({ input: process.stdin });
 
 function output(output) {
-  process.stdout.write(output + "\n");
+  process.stdout.write(output + '\n');
 }
 
 let lineNumber = 0;
 
-
 function main() {
-	//code here
+  //code here
 }
 
-io_interface.on("line", function (line) {
+io_interface.on('line', function (line) {
   if (lineNumber === 0) {
     //...
   }
@@ -20,6 +19,6 @@ io_interface.on("line", function (line) {
   lineNumber++;
 });
 
-io_interface.on("close", function () {
+io_interface.on('close', function () {
   main();
 });

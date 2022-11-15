@@ -6,16 +6,14 @@ function siftUp(heap, index) {
   const parentIndex = Math.floor(index / 2);
 
   if (heap[parentIndex] >= heap[index]) {
-  
-	return index;
+    return index;
   }
 
-//   let temp = heap[parentIndex];
+  //   let temp = heap[parentIndex];
   [heap[parentIndex], heap[index]] = [heap[index], heap[parentIndex]];
-//   heap[index] = temp
+  //   heap[index] = temp
 
   return siftUp(heap, parentIndex);
-  
 }
 
 // function test() {

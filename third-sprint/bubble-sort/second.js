@@ -35,11 +35,11 @@ const mergeSort = (arr, left, right) => {
     return arr;
   }
 
-  mid = Math.floor((left + right) / 2);
+  let mid = Math.floor((left + right) / 2);
   mergeSort(arr, left, mid);
   mergeSort(arr, mid, right);
 
-  const sorted = merge(arr, left, mid, right)
+  const sorted = merge(arr, left, mid, right);
 };
 
 arrays = arrays.map((arr) => {

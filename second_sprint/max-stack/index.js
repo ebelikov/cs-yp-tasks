@@ -1,8 +1,8 @@
-var readline = require("readline");
+var readline = require('readline');
 var io_interface = readline.createInterface({ input: process.stdin });
 
 function output(output) {
-  process.stdout.write(output + "\n");
+  process.stdout.write(output + '\n');
 }
 
 class Stack {
@@ -34,7 +34,7 @@ class Stack {
 
       return popedItem;
     } else {
-      output("error");
+      output('error');
     }
   }
 
@@ -46,7 +46,7 @@ class Stack {
     if (this.maxItems.length) {
       output(this.maxItems[this.maxItems.length - 1]);
     } else {
-      output("None");
+      output('None');
     }
   }
 }
@@ -57,7 +57,7 @@ let operationLength = 0;
 const operations = [];
 
 function addOperationLine(line) {
-  operations.push(line.trim().split(" "));
+  operations.push(line.trim().split(' '));
 }
 
 function runOperations(n, operations) {
@@ -73,7 +73,7 @@ function main() {
   runOperations(operationLength, operations);
 }
 
-io_interface.on("line", function (line) {
+io_interface.on('line', function (line) {
   if (line_number === 0) {
     operationLength = Number(line);
   } else if (line) {
@@ -83,6 +83,6 @@ io_interface.on("line", function (line) {
   line_number++;
 });
 
-io_interface.on("close", function () {
+io_interface.on('close', function () {
   main();
 });

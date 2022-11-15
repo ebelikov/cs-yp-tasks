@@ -1,15 +1,15 @@
 this.scope = 'global';
 
 const obj = {
-	scope: 'obj',
-}
+  scope: 'obj',
+};
 
 function zoo() {
-	const foo = () => {
-		console.log(this);
-	}
+  const foo = () => {
+    console.log(this);
+  };
 
-	foo();
+  foo();
 }
 
 zoo.call(obj);

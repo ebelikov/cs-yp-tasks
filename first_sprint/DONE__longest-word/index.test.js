@@ -1,18 +1,17 @@
-const { main } = require("./index.js");
+const { main } = require('./index.js');
 
-test("first", () => {
-  expect(main(["i", "love", "segment", "tree"])).toBe('segment');
+test('first', () => {
+  expect(main(['i', 'love', 'segment', 'tree'])).toBe('segment');
 });
 
-test("second", () => {
-  expect(main(["frog", "jumps", "from", "river"])).toBe('jumps');
+test('second', () => {
+  expect(main(['frog', 'jumps', 'from', 'river'])).toBe('jumps');
 });
 
-test("third", () => {
+test('third', () => {
   expect(main([])).toBe('');
 });
 
-test("fourth", () => {
+test('fourth', () => {
   expect(main(['f'])).toBe('f');
 });
-

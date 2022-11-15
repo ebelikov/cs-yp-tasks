@@ -1,6 +1,5 @@
-const { main } = require("./index.js");
+const { main } = require('./index.js');
 
-
-test("", () => {
+test('', () => {
   expect(main()).toBe(undefined);
 });

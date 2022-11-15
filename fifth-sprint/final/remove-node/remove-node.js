@@ -29,7 +29,7 @@
  */
 
 function getSide(condition) {
-  return condition ? "left" : "right";
+  return condition ? 'left' : 'right';
 }
 
 function getRemoveOptions(node, key) {

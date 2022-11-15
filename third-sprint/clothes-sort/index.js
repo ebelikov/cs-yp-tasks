@@ -9,9 +9,9 @@
  *
  */
 
-const readline = require("readline");
+const readline = require('readline');
 const io_interface = readline.createInterface({ input: process.stdin });
-const ERROR = "error";
+const ERROR = 'error';
 let lineNumber = 0;
 let numbers = null;
 let len = null;
@@ -26,13 +26,13 @@ const sortClothes = (arr, n) => {
   }
 
   let res = Array(n).fill(0);
-  let quantity = [0, 0, 0]
+  let quantity = [0, 0, 0];
 
   arr.forEach((el, index) => {
-	  quantity[index]++;
+    quantity[index]++;
   });
 
-  return [...Ar];
+  return [...arr];
 };
 
 const main = () => {
@@ -41,22 +41,22 @@ const main = () => {
   if (!res) {
     return;
   }
-  output(res.join(" "));
+  output(res.join(' '));
 };
 
-io_interface.on("line", function (line) {
+io_interface.on('line', function (line) {
   if (lineNumber === 0) {
     len = Number(line);
   } else if (lineNumber === 1) {
     numbers = line
       .trim()
-      .split(" ")
+      .split(' ')
       .map((n) => Number(n));
   }
 
   lineNumber++;
 });
 
-io_interface.on("close", function () {
+io_interface.on('close', function () {
   main();
 });

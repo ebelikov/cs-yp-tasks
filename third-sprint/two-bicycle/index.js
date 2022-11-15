@@ -9,9 +9,9 @@
  *
  */
 
-const readline = require("readline");
+const readline = require('readline');
 const io_interface = readline.createInterface({ input: process.stdin });
-const ERROR = "error";
+const ERROR = 'error';
 
 let savingsLength = null;
 let savings = [];
@@ -60,13 +60,13 @@ const main = () => {
   output(`${dayWhenCanByeFirstBicycle} ${dayWhenCanByeSecondBicycle}`);
 };
 
-io_interface.on("line", function (line) {
+io_interface.on('line', function (line) {
   if (lineNumber === 0) {
     savingsLength = Number(line);
   } else if (lineNumber === 1) {
     savings = line
       .trim()
-      .split(" ")
+      .split(' ')
       .map((n) => Number(n));
   } else if (lineNumber === 2) {
     bicycleCost = Number(line);
@@ -75,6 +75,6 @@ io_interface.on("line", function (line) {
   lineNumber++;
 });
 
-io_interface.on("close", function () {
+io_interface.on('close', function () {
   main();
 });

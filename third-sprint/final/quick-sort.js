@@ -37,7 +37,7 @@
  * В среднем случае О(log(n))
  */
 
-const readline = require("readline");
+const readline = require('readline');
 const io_interface = readline.createInterface({ input: process.stdin });
 
 let lineNumber = 0;
@@ -46,7 +46,7 @@ let n = null;
 
 const output = (arr) => {
   arr.forEach(({ name }) => {
-    process.stdout.write(name + "\n");
+    process.stdout.write(name + '\n');
   });
 };
 
@@ -126,7 +126,7 @@ const main = () => {
 };
 
 const parseLine = (line) => {
-  const arrLine = line.trim().split(" ");
+  const arrLine = line.trim().split(' ');
 
   const obj = {
     name: arrLine[0],
@@ -137,7 +137,7 @@ const parseLine = (line) => {
   return obj;
 };
 
-io_interface.on("line", function (line) {
+io_interface.on('line', function (line) {
   if (lineNumber === 0) {
     n = Number(line);
   } else if (lineNumber <= n) {
@@ -147,6 +147,6 @@ io_interface.on("line", function (line) {
   lineNumber++;
 });
 
-io_interface.on("close", function () {
+io_interface.on('close', function () {
   main();
 });

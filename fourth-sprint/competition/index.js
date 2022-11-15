@@ -9,7 +9,7 @@
  *
  */
 
-const readline = require("readline");
+const readline = require('readline');
 const io_interface = readline.createInterface({ input: process.stdin });
 
 let lineNumber = 0;
@@ -45,7 +45,7 @@ const findMaxRange = (arr) => {
 
   arr = prepare(arr);
 
-  console.log(arr.join(","));
+  console.log(arr.join(','));
 
   const map = new Map();
   let total = 0;
@@ -72,17 +72,17 @@ const main = () => {
   output(res.toString());
 };
 
-io_interface.on("line", function (line) {
+io_interface.on('line', function (line) {
   if (lineNumber === 1) {
     winArr = line
       .trim()
-      .split(" ")
+      .split(' ')
       .map((n) => Number(n));
   }
 
   lineNumber++;
 });
 
-io_interface.on("close", function () {
+io_interface.on('close', function () {
   main();
 });

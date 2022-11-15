@@ -21,10 +21,10 @@
  * то - O(m) где m - maxDecLength размер статического массива
  */
 
-const readline = require("readline");
+const readline = require('readline');
 const io_interface = readline.createInterface({ input: process.stdin });
 
-const ERROR = "error";
+const ERROR = 'error';
 const operations = [];
 
 let lineNumber = 0;
@@ -123,16 +123,16 @@ const main = () => {
 };
 
 const handleOperationLine = (line) => {
-  const [operation, argument] = line.split(" ");
-  
+  const [operation, argument] = line.split(' ');
+
   return { operation, argument };
 };
 
 const output = (value) => {
-  process.stdout.write(value + "\n");
+  process.stdout.write(value + '\n');
 };
 
-io_interface.on("line", function (line) {
+io_interface.on('line', function (line) {
   if (lineNumber === 0) {
     operationLength = Number(line);
   } else if (lineNumber === 1) {
@@ -144,6 +144,6 @@ io_interface.on("line", function (line) {
   lineNumber++;
 });
 
-io_interface.on("close", function () {
+io_interface.on('close', function () {
   main();
 });
